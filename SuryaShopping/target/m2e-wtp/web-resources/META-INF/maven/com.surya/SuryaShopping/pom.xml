@@ -11,7 +11,7 @@
   	<!-- Version information will be stored here -->
 	<properties>
 		<javaee.version>7.0</javaee.version>
-		<spring.version>4.3.6.RELEASE</spring.version>
+		<spring.version>4.3.11.RELEASE</spring.version>
 		<spring.security.version>4.2.2.RELEASE</spring.security.version>
 	</properties>
   <dependencies>
@@ -27,6 +27,25 @@
 			<artifactId>javaee-api</artifactId>
 			<version>${javaee.version}</version>
 			<scope>provided</scope>
+		</dependency>
+		
+		<!-- SPRING -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
 		</dependency>
   </dependencies>
   <build>
